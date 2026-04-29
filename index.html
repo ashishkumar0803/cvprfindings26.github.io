@@ -402,23 +402,21 @@
         </div>
 
         <div class="result-block">
-          <img src="static/images/dataset_aesthetic.jpg" alt="Aesthetic QR corruption examples across several distortion types" loading="lazy">
-          <h3 class="result-title">Aesthetic QR Corruption Patterns</h3>
+          <img src="static/results/aesthicvsnormal.png" alt="Aesthetic QR corruption examples across several distortion types" loading="lazy">
+          <h3 class="result-title">Standard vs. aesthetic QR code scannability by QReader (left) and ZXing (right).</h3>
           <p class="result-desc">
-            This panel shows aesthetic QR codes under diverse corruption settings. Because these codes already contain stylized textures, embedded imagery, and color-rich structures, additional corruptions substantially degrade their machine-readable patterns. The paper shows that corrupted aesthetic QR codes are much harder for both commercial and open-source scanners, and in many cases commercial tools fail entirely on these corrupted aesthetic samples.
+          QReader consistently outperforms ZXing, demonstrating stronger robustness and generalization across both standard and aesthetic QR codes under diverse real-world distortions. While aesthetic QR codes are more vulnerable overall, these two scanners remain the only reliable tools for meaningful comparative evaluation.
           </p>
         </div>
 
         <div class="result-block">
-          <img src="static/images/Dataset_standard.jpg" alt="Standard QR corruption examples across the 18 benchmark distortions" loading="lazy">
-          <h3 class="result-title">Standard QR Benchmark Distortions</h3>
+          <img src="static/results/aesthtic_results.png" alt="Standard QR corruption examples across the 18 benchmark distortions" loading="lazy">
+          <h3 class="result-title">Accuracy (%) of scanners under various real-life distortions on aesthetic QR codes. EE: Environmental Effects, MFI: Motion and Focus Issues, PDI: Printing and Display Imperfections, LCV: Lighting and Color Variations, PDO: Physical Damage and Obstruction.</h3>
           <p class="result-desc">
-            This figure presents representative standard QR codes under the 18 benchmark corruption types, including environmental effects, motion blur, defocus, display imperfections, lighting variation, and physical damage. These examples communicate the breadth of the benchmark and explain why robustness evaluation must cover a wide range of real-world failure modes instead of a single synthetic corruption family.
-          </p>
+          Aesthetic QR codes are significantly more vulnerable to real-world distortions than standard ones, with most commercial scanners failing to decode them under corruption. Among all, QReader performs best, highlighting both the current limitations and the need for improved robustness in aesthetic QR design.          </p>
         </div>
 
         <div class="paper-note-box">
-          Add additional images from <strong>static/results/</strong> by duplicating each <strong>result-block</strong> structure above and replacing the image path and description. This section is already designed so you can directly drop future paper figures here without affecting the rest of the website.
         </div>
       </div>
     </section>
