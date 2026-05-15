@@ -71,20 +71,19 @@
   <script defer src="static/js/index.js"></script>
 
   <style>
+    /* ── Teaser / hero image ── */
     .hero-image-wrapper {
       border-radius: 18px;
       overflow: hidden;
-      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.12);
-      border: 1px solid rgba(37, 99, 235, 0.08);
+      box-shadow: 0 18px 50px rgba(0,0,0,0.12);
+      border: 1px solid rgba(37,99,235,0.08);
       background: #fff;
     }
-
     .hero-image-wrapper img {
       width: 100%;
       display: block;
       object-fit: cover;
     }
-
     .hero-image-caption {
       margin-top: 1rem;
       font-size: 1rem;
@@ -92,87 +91,64 @@
       text-align: center;
     }
 
+    /* ── Key Findings: 4-column horizontal row ── */
     .findings-section {
       background: linear-gradient(180deg, #f8fbff 0%, #ffffff 100%);
     }
-
     .findings-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1.5rem;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.25rem;
       margin-top: 2rem;
+      align-items: stretch;
     }
-
     .finding-card {
       background: #ffffff;
-      border: 1px solid rgba(37, 99, 235, 0.14);
+      border: 1px solid rgba(37,99,235,0.14);
       border-radius: 18px;
       padding: 1.5rem;
-      box-shadow: 0 12px 35px rgba(15, 23, 42, 0.06);
+      box-shadow: 0 12px 35px rgba(15,23,42,0.06);
       height: 100%;
       transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
-
     .finding-card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 16px 40px rgba(15, 23, 42, 0.10);
+      box-shadow: 0 16px 40px rgba(15,23,42,0.10);
     }
-
     .finding-card h3 {
-      font-size: 1.15rem;
+      font-size: 1.05rem;
       font-weight: 700;
       margin-bottom: 0.75rem;
       color: #1f3b74;
     }
-
     .finding-card p {
       margin: 0;
       color: #4a4a4a;
       line-height: 1.7;
+      font-size: 0.95rem;
     }
 
-    .results-gallery .result-block {
-      margin-bottom: 3rem;
-      padding: 1.25rem;
-      border-radius: 18px;
-      background: #ffffff;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
-      border: 1px solid rgba(0,0,0,0.06);
+    /* Responsive: 2-col on tablet, 1-col on mobile */
+    @media screen and (max-width: 1024px) {
+      .findings-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media screen and (max-width: 600px) {
+      .findings-grid { grid-template-columns: 1fr; }
+      .finding-card { padding: 1rem; }
     }
 
-    .results-gallery img {
+    /* ── Poster iframe ── */
+    .poster-wrapper {
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.10);
+      border: 1px solid #e2e8f0;
+    }
+    .poster-wrapper iframe {
+      display: block;
       width: 100%;
-      border-radius: 14px;
-      margin-bottom: 1rem;
-    }
-
-    .result-title {
-      font-size: 1.3rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-      color: #222;
-    }
-
-    .result-desc {
-      color: #4a4a4a;
-      line-height: 1.75;
-      margin-bottom: 0;
-    }
-
-    .paper-note-box {
-      margin-top: 2rem;
-      padding: 1rem 1.25rem;
-      border-left: 4px solid #2563eb;
-      background: #eff6ff;
-      border-radius: 12px;
-      color: #234;
-    }
-
-    @media screen and (max-width: 768px) {
-      .finding-card,
-      .results-gallery .result-block {
-        padding: 1rem;
-      }
+      height: 580px;
+      border: none;
     }
   </style>
 
@@ -187,35 +163,23 @@
         "@type": "Person",
         "name": "Ashish Kumar",
         "url": "https://www.linkedin.com/in/ashish-kumar-592420238",
-        "affiliation": {
-          "@type": "Organization",
-          "name": "Trustworthy BiometraVision Lab, IISER Bhopal, India"
-        }
+        "affiliation": { "@type": "Organization", "name": "Trustworthy BiometraVision Lab, IISER Bhopal, India" }
       },
       {
         "@type": "Person",
         "name": "Aarthi S",
-        "url": "https://www.linkedin.com/in/aarthi-sankar-221777289?utm_source=share_via&utm_content=profile&utm_medium=member_android",
-        "affiliation": {
-          "@type": "Organization",
-          "name": "Trustworthy BiometraVision Lab, IISER Bhopal, India"
-        }
+        "url": "https://www.linkedin.com/in/aarthi-sankar-221777289",
+        "affiliation": { "@type": "Organization", "name": "Trustworthy BiometraVision Lab, IISER Bhopal, India" }
       },
       {
         "@type": "Person",
         "name": "Akshay Agarwal",
         "url": "https://sites.google.com/iiitd.ac.in/agarwalakshay/home",
-        "affiliation": {
-          "@type": "Organization",
-          "name": "Trustworthy BiometraVision Lab, IISER Bhopal, India"
-        }
+        "affiliation": { "@type": "Organization", "name": "Trustworthy BiometraVision Lab, IISER Bhopal, India" }
       }
     ],
     "datePublished": "2026-01-01",
-    "publisher": {
-      "@type": "Organization",
-      "name": "IEEE/CVF Computer Vision and Pattern Recognition (CVPR) Findings 2026"
-    },
+    "publisher": { "@type": "Organization", "name": "IEEE/CVF Computer Vision and Pattern Recognition (CVPR) Findings 2026" },
     "url": "https://ashishkumar0803.github.io/cvprfindings26.github.io/",
     "image": "static/images/1.png",
     "keywords": ["QR code", "robustness", "image corruption", "computer vision", "aesthetic QR codes"],
@@ -226,10 +190,12 @@
 </head>
 <body>
 
+  <!-- Scroll to top -->
   <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
     <i class="fas fa-chevron-up"></i>
   </button>
 
+  <!-- More Works dropdown -->
   <div class="more-works-container">
     <button class="more-works-btn" onclick="toggleMoreWorks()" title="View More Works from Our Lab">
       <i class="fas fa-flask"></i>
@@ -257,79 +223,102 @@
   </div>
 
   <main id="main-content">
+
+    <!-- ═══════════════════════════════════════════
+         HERO / TITLE
+    ════════════════════════════════════════════ -->
     <section class="hero">
       <div class="hero-body">
         <div class="container is-max-desktop">
           <div class="columns is-centered">
             <div class="column has-text-centered">
-              <h1 class="title is-1 publication-title">Tap, Scan, Exploit: The Hidden Vulnerabilities of Everyday QR Codes</h1>
+
+              <h1 class="title is-1 publication-title">
+                Tap, Scan, Exploit: The Hidden Vulnerabilities of Everyday QR Codes
+              </h1>
+
+              <!-- Authors -->
               <div class="is-size-5 publication-authors">
                 <span class="author-block">
                   <a href="https://www.linkedin.com/in/ashish-kumar-592420238" target="_blank" rel="noopener noreferrer">Ashish Kumar</a>,
                 </span>
                 <span class="author-block">
-                  <a href="https://www.linkedin.com/in/aarthi-sankar-221777289?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer">Aarthi S</a>,
+                  <a href="https://www.linkedin.com/in/aarthi-sankar-221777289" target="_blank" rel="noopener noreferrer">Aarthi S</a>,
                 </span>
                 <span class="author-block">
                   <a href="https://sites.google.com/iiitd.ac.in/agarwalakshay/home" target="_blank" rel="noopener noreferrer">Akshay Agarwal</a>
                 </span>
               </div>
 
-              <!-- ✅ CHANGED: Lab name and IISER Bhopal now linked -->
+              <!-- Lab + Institution  (line 1) -->
               <div class="is-size-5 publication-authors">
                 <span class="author-block">
                   <a href="https://tbvl22.github.io/website/home.html" target="_blank" rel="noopener noreferrer">Trustworthy BiometraVision Lab</a>,
-                  <a href="https://www.iiserb.ac.in/" target="_blank" rel="noopener noreferrer">IISER Bhopal, India</a>,
+                  <a href="https://www.iiserb.ac.in/" target="_blank" rel="noopener noreferrer">IISER Bhopal, India</a>
+                </span>
+              </div>
+
+              <!-- Conference  (line 2 — now below the lab line) -->
+              <div class="is-size-5 publication-authors">
+                <span class="author-block">
                   IEEE/CVF Computer Vision and Pattern Recognition Findings 2026
                 </span>
               </div>
 
+              <!-- Links -->
               <div class="column has-text-centered">
                 <div class="publication-links">
-                  <!-- Paper -->
                   <span class="link-block">
-                    <a href="static/pdfs/CVPR26_qr_camera_ready-4.pdf" target="_blank" rel="noopener noreferrer" class="external-link button is-normal is-rounded is-dark">
+                    <a href="static/pdfs/CVPR26_qr_camera_ready-4.pdf" target="_blank" rel="noopener noreferrer"
+                       class="external-link button is-normal is-rounded is-dark">
                       <span class="icon"><i class="fas fa-file-pdf"></i></span>
                       <span>Paper</span>
                     </a>
                   </span>
 
-                  <!-- ✅ ADDED: Supplementary (GitHub placeholder) -->
                   <span class="link-block">
-                    <a href="https://github.com/ashishkumar0803/Tap-Scan-Exploit-The-Hidden-Vulnerabilities-of-Everyday-QR-Codes.git" target="_blank" rel="noopener noreferrer" class="external-link button is-normal is-rounded is-dark">
+                    <a href="https://github.com/ashishkumar0803/Tap-Scan-Exploit-The-Hidden-Vulnerabilities-of-Everyday-QR-Codes.git"
+                       target="_blank" rel="noopener noreferrer"
+                       class="external-link button is-normal is-rounded is-dark">
                       <span class="icon"><i class="fas fa-file-alt"></i></span>
                       <span>Supplementary</span>
                     </a>
                   </span>
 
-                  <!-- Code -->
                   <span class="link-block">
-                    <a href="https://github.com/ashishkumar0803/Tap-Scan-Exploit.git" target="_blank" rel="noopener noreferrer" class="external-link button is-normal is-rounded is-dark">
+                    <a href="https://github.com/ashishkumar0803/Tap-Scan-Exploit.git" target="_blank" rel="noopener noreferrer"
+                       class="external-link button is-normal is-rounded is-dark">
                       <span class="icon"><i class="fab fa-github"></i></span>
                       <span>Code</span>
                     </a>
                   </span>
 
-                  <!-- ✅ ADDED: Checkpoints (GitHub placeholder) -->
                   <span class="link-block">
-                    <a href="https://huggingface.co/Ashish08kumar/CVPR_FINDINGS26_Tap-Scan-Exploit" target="_blank" rel="noopener noreferrer" class="external-link button is-normal is-rounded is-dark">
+                    <a href="https://huggingface.co/Ashish08kumar/CVPR_FINDINGS26_Tap-Scan-Exploit" target="_blank" rel="noopener noreferrer"
+                       class="external-link button is-normal is-rounded is-dark">
                       <span class="icon"><i class="fas fa-database"></i></span>
-                      <span>Dataset/Checkpoints</span>
+                      <span>Dataset / Checkpoints</span>
                     </a>
                   </span>
                 </div>
               </div>
+
             </div>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- ═══════════════════════════════════════════
+         TEASER IMAGE
+    ════════════════════════════════════════════ -->
     <section class="hero teaser">
       <div class="container is-max-desktop">
         <div class="hero-body">
           <div class="hero-image-wrapper">
-            <img src="static/images/1.png" alt="Main overview figure for Tap, Scan, Exploit showing QR corruption analysis" loading="eager">
+            <img src="static/images/1.png"
+                 alt="Main overview figure for Tap, Scan, Exploit showing QR corruption analysis"
+                 loading="eager">
           </div>
           <h2 class="subtitle has-text-centered hero-image-caption">
             Overview of the proposed study, illustrating how standard and aesthetic QR codes are evaluated under diverse real-world distortions.
@@ -338,6 +327,9 @@
       </div>
     </section>
 
+    <!-- ═══════════════════════════════════════════
+         ABSTRACT
+    ════════════════════════════════════════════ -->
     <section class="section hero is-light">
       <div class="container is-max-desktop">
         <div class="columns is-centered has-text-centered">
@@ -353,58 +345,80 @@
       </div>
     </section>
 
-    <!-- ✅ ADDED: Dataset heading section before the carousel -->
+    <!-- ═══════════════════════════════════════════
+         DATASET HEADING
+    ════════════════════════════════════════════ -->
     <section class="section">
       <div class="container is-max-desktop">
         <div class="columns is-centered has-text-centered">
           <div class="column is-four-fifths">
             <h2 class="title is-3">Dataset</h2>
-            <p class="subtitle is-5">
-            </p>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- ═══════════════════════════════════════════
+         DATASET CAROUSEL
+    ════════════════════════════════════════════ -->
     <section class="hero is-small">
       <div class="hero-body">
         <div class="container">
           <div id="results-carousel" class="carousel results-carousel">
+
             <div class="item">
-              <img src="static/images/aesthetic.png" alt="Aesthetic QR code dataset examples under different corruption types" loading="lazy"/>
+              <img src="static/images/aesthetic.png"
+                   alt="Aesthetic QR code dataset examples under different corruption types"
+                   loading="lazy"/>
               <h2 class="subtitle has-text-centered">
                 Aesthetic QR codes under various real-world corruption types at severity level 5.
               </h2>
             </div>
+
             <div class="item">
-              <img src="static/images/Dataset_standard.png" alt="Standard QR code dataset examples under different corruption types" loading="lazy"/>
+              <img src="static/images/Dataset_standard.png"
+                   alt="Standard QR code dataset examples under different corruption types"
+                   loading="lazy"/>
               <h2 class="subtitle has-text-centered">
                 Standard QR codes under various real-world corruption types at severity level 5 (Global).
               </h2>
             </div>
+
             <div class="item">
-              <img src="static/images/finder.png" alt="Aesthetic QR comparison panel" loading="lazy"/>
+              <img src="static/images/finder.png"
+                   alt="Standard QR codes corrupted at finder pattern region"
+                   loading="lazy"/>
               <h2 class="subtitle has-text-centered">
-               Standard QR codes are subjected to various real-world corruption types at the finder pattern region (local) with severity level 5.
+                Standard QR codes subjected to various real-world corruption types at the finder pattern region (local) with severity level 5.
               </h2>
             </div>
+
             <div class="item">
-              <img src="static/images/black.png" alt="Standard QR comparison panel" loading="lazy"/>
+              <img src="static/images/black.png"
+                   alt="Standard QR codes corrupted at black region"
+                   loading="lazy"/>
               <h2 class="subtitle has-text-centered">
-                Standard QR codes are subjected to various real-world corruption types at the black region (local) with severity level 5.
+                Standard QR codes subjected to various real-world corruption types at the black region (local) with severity level 5.
               </h2>
             </div>
+
             <div class="item">
-              <img src="static/images/white.png" alt="Standard QR comparison panel" loading="lazy"/>
+              <img src="static/images/white.png"
+                   alt="Standard QR codes corrupted at white region"
+                   loading="lazy"/>
               <h2 class="subtitle has-text-centered">
-                Standard QR codes are subjected to various real-world corruption types at the white region (local) with severity level 5.
+                Standard QR codes subjected to various real-world corruption types at the white region (local) with severity level 5.
               </h2>
             </div>
+
           </div>
         </div>
       </div>
     </section>
 
+    <!-- ═══════════════════════════════════════════
+         KEY FINDINGS  (single horizontal row)
+    ════════════════════════════════════════════ -->
     <section class="section findings-section">
       <div class="container is-max-desktop">
         <div class="columns is-centered has-text-centered">
@@ -412,66 +426,116 @@
             <h2 class="title is-3">Key Findings</h2>
             <p class="subtitle is-5">Core observations distilled from the large-scale QR robustness study.</p>
             <div class="findings-grid">
+
               <div class="finding-card">
                 <h3>Aesthetic Vulnerability</h3>
                 <p>Aesthetic QR codes are significantly more prone to failure under real-world distortions compared to standard ones.</p>
               </div>
+
               <div class="finding-card">
-                <h3>The Finder Pattern Weakness</h3>
+                <h3>Finder Pattern Weakness</h3>
                 <p>Finder patterns, especially the corner regions, are the most critical parts of a QR code; corruption in these areas frequently causes complete decoding failure.</p>
               </div>
+
               <div class="finding-card">
                 <h3>Resolution Resilience</h3>
                 <p>Higher resolution QR codes exhibit stronger robustness against lighting changes, environmental interference, and localization-related distortions.</p>
               </div>
+
               <div class="finding-card">
                 <h3>Mitigation Success</h3>
                 <p>GAN-based defense models can improve recognition rates by over 10% on unseen corruptions, indicating that restoration-based mitigation is a promising direction.</p>
               </div>
+
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section results-gallery is-light">
+    <!-- ═══════════════════════════════════════════
+         RESULTS HEADING
+    ════════════════════════════════════════════ -->
+    <section class="section is-light">
       <div class="container is-max-desktop">
         <div class="columns is-centered has-text-centered">
           <div class="column is-four-fifths">
             <h2 class="title is-3">Results</h2>
-            <p class="subtitle is-5">Visual evidence from the paper describing how corruption impacts decoding performance across QR types and settings.</p>
+            <p class="subtitle is-5">
+              Visual evidence from the paper describing how corruption impacts decoding performance across QR types and settings.
+            </p>
           </div>
-        </div>
-
-        <div class="result-block">
-          <img src="static/results/aesthicvsnormal.png" alt="Aesthetic QR corruption examples across several distortion types" loading="lazy">
-          <h3 class="result-title">Standard vs. aesthetic QR code scannability by QReader (left) and ZXing (right).</h3>
-          <p class="result-desc">
-          QReader consistently outperforms ZXing, demonstrating stronger robustness and generalization across both standard and aesthetic QR codes under diverse real-world distortions. While aesthetic QR codes are more vulnerable overall, these two scanners remain the only reliable tools for meaningful comparative evaluation.
-          </p>
-        </div>
-
-        <div class="result-block">
-          <img src="static/results/aesthetic_results.png" alt="Standard QR corruption examples across the 18 benchmark distortions" loading="lazy">
-          <h3 class="result-title">Accuracy (%) of scanners under various real-life distortions on aesthetic QR codes. EE: Environmental Effects, MFI: Motion and Focus Issues, PDI: Printing and Display Imperfections, LCV: Lighting and Color Variations, PDO: Physical Damage and Obstruction.</h3>
-          <p class="result-desc">
-          Aesthetic QR codes are significantly more vulnerable to real-world distortions than standard ones, with most commercial scanners failing to decode them under corruption. Among all, QReader performs best, highlighting both the current limitations and the need for improved robustness in aesthetic QR design.          </p>
-        </div>
-
-        <div class="paper-note-box">
         </div>
       </div>
     </section>
 
+    <!-- ═══════════════════════════════════════════
+         RESULTS CAROUSEL  (same floating style as Dataset)
+    ════════════════════════════════════════════ -->
+    <section class="hero is-small is-light">
+      <div class="hero-body">
+        <div class="container">
+          <div id="results-visual-carousel" class="carousel results-carousel">
+
+            <div class="item">
+              <img src="static/results/aesthicvsnormal.png"
+                   alt="Standard vs aesthetic QR code scannability by QReader and ZXing"
+                   loading="lazy"/>
+              <h2 class="subtitle has-text-centered">
+                Standard vs. aesthetic QR code scannability by QReader (left) and ZXing (right).
+                QReader consistently outperforms ZXing, demonstrating stronger robustness across both QR types.
+              </h2>
+            </div>
+
+            <div class="item">
+              <img src="static/results/aesthetic_results.png"
+                   alt="Scanner accuracy under real-life distortions on aesthetic QR codes"
+                   loading="lazy"/>
+              <h2 class="subtitle has-text-centered">
+                Accuracy (%) of scanners under various real-life distortions on aesthetic QR codes.
+                EE: Environmental Effects · MFI: Motion and Focus Issues · PDI: Printing and Display Imperfections ·
+                LCV: Lighting and Color Variations · PDO: Physical Damage and Obstruction.
+              </h2>
+            </div>
+
+            <!-- ➕ Add more result images here — copy this block and change src/alt/caption -->
+            <!--
+            <div class="item">
+              <img src="static/results/your_new_result.png"
+                   alt="Description of this result"
+                   loading="lazy"/>
+              <h2 class="subtitle has-text-centered">
+                Your caption here.
+              </h2>
+            </div>
+            -->
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         POSTER  (Office Online PPTX embed)
+    ════════════════════════════════════════════ -->
     <section class="hero is-small is-light">
       <div class="hero-body">
         <div class="container">
           <h2 class="title">Poster</h2>
-          <iframe src="static/pdf/poster#83.pptx" width="100%" height="550"></iframe>
+          <div class="poster-wrapper">
+            <iframe
+              src="https://view.officeapps.live.com/op/embed.aspx?src=https://ashishkumar0803.github.io/cvprfindings26.github.io/static/pdf/poster%2383.pptx"
+              title="CVPR 2026 Poster"
+              allowfullscreen>
+            </iframe>
+          </div>
         </div>
       </div>
     </section>
 
+    <!-- ═══════════════════════════════════════════
+         BIBTEX
+    ════════════════════════════════════════════ -->
     <section class="section" id="BibTeX">
       <div class="container is-max-desktop content">
         <div class="bibtex-header">
@@ -491,20 +555,31 @@
       </div>
     </section>
 
+    <!-- ═══════════════════════════════════════════
+         FOOTER
+    ════════════════════════════════════════════ -->
     <footer class="footer">
       <div class="container">
         <div class="columns is-centered">
           <div class="column is-8">
             <div class="content">
               <p>
-                This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank" rel="noopener noreferrer">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank" rel="noopener noreferrer">Nerfies</a> project page.
-                You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+                This page was built using the
+                <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank" rel="noopener noreferrer">Academic Project Page Template</a>
+                which was adopted from the
+                <a href="https://nerfies.github.io" target="_blank" rel="noopener noreferrer">Nerfies</a>
+                project page. You are free to borrow the source code of this website, we just ask that you link back to this page in the footer.
+                <br>
+                This website is licensed under a
+                <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">
+                  Creative Commons Attribution-ShareAlike 4.0 International License</a>.
               </p>
             </div>
           </div>
         </div>
       </div>
     </footer>
+
   </main>
 </body>
 </html>
