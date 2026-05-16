@@ -45,7 +45,8 @@
 
   <title>Tap, Scan, Exploit: The Hidden Vulnerabilities of Everyday QR Codes - Ashish Kumar, Aarthi S, Akshay Agarwal | Academic Research</title>
 
-  <!-- Favicon intentionally removed — no icon shown in browser tab -->
+  <link rel="icon" type="image/x-icon" href="static/images/151454500.jpg">
+  <link rel="apple-touch-icon" href="static/images/151454500.jpg">
 
   <link rel="stylesheet" href="static/css/bulma.min.css">
   <link rel="stylesheet" href="static/css/index.css">
@@ -96,7 +97,25 @@
       line-height: 1.4 !important;
     }
 
-    /* ── Lab, Institution and Conference lines: light blue ── */
+    /* ── Author names (line 1): same blue as lab line ── */
+    .author-name-line {
+      color: #5b9bd5 !important;
+      font-weight: 600;
+    }
+    .author-name-line a {
+      color: #5b9bd5 !important;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    .author-name-line a:hover {
+      color: #2563eb !important;
+      text-decoration: underline;
+    }
+    .author-name-line a::after {
+      display: none !important;
+    }
+
+    /* ── Lab + Institution line (line 2): same blue ── */
     .affil-line {
       color: #5b9bd5 !important;
       font-weight: 500;
@@ -112,6 +131,12 @@
     }
     .affil-line a::after {
       display: none !important;
+    }
+
+    /* ── IEEE/CVF line (line 3): black ── */
+    .conference-line {
+      color: #111111 !important;
+      font-weight: 500;
     }
 
     /* ── Key Findings: 4-column horizontal row ── */
@@ -257,7 +282,8 @@
                 Tap, Scan, Exploit: The Hidden Vulnerabilities of Everyday QR Codes
               </h1>
 
-              <div class="is-size-5 publication-authors">
+              <!-- LINE 1: Author names — blue -->
+              <div class="is-size-5 publication-authors author-name-line">
                 <span class="author-block">
                   <a href="https://www.linkedin.com/in/ashish-kumar-592420238" target="_blank" rel="noopener noreferrer">Ashish Kumar</a>,
                 </span>
@@ -269,6 +295,7 @@
                 </span>
               </div>
 
+              <!-- LINE 2: Lab + Institution — same blue -->
               <div class="is-size-5 publication-authors affil-line">
                 <span class="author-block">
                   <a href="https://tbvl22.github.io/website/home.html" target="_blank" rel="noopener noreferrer">Trustworthy BiometraVision Lab</a>,
@@ -276,7 +303,8 @@
                 </span>
               </div>
 
-              <div class="is-size-5 publication-authors affil-line">
+              <!-- LINE 3: Conference — black -->
+              <div class="is-size-5 publication-authors conference-line">
                 <span class="author-block">
                   IEEE/CVF Computer Vision and Pattern Recognition Findings 2026
                 </span>
