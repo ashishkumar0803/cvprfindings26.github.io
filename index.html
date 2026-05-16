@@ -71,6 +71,12 @@
   <script defer src="static/js/index.js"></script>
 
   <style>
+
+    /* ── CRITICAL: Override Nerfies template dark body background ── */
+    body {
+      background-color: #ffffff !important;
+    }
+
     /* ── Teaser / hero image ── */
     .hero-image-wrapper {
       border-radius: 18px;
@@ -97,7 +103,7 @@
       line-height: 1.4 !important;
     }
 
-    /* ── Author names (line 1): same blue as lab line ── */
+    /* ── Author names (line 1): blue ── */
     .author-name-line {
       color: #5b9bd5 !important;
       font-weight: 600;
@@ -183,25 +189,31 @@
       .finding-card { padding: 1rem; }
     }
 
-    /* ── Poster iframe ── */
+    /* ── Poster section: fully white, no dark bleed ── */
+    .poster-section {
+      background-color: #ffffff !important;
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+    }
     .poster-wrapper {
+      background: #ffffff;
       border-radius: 16px;
       overflow: hidden;
       box-shadow: 0 10px 30px rgba(0,0,0,0.10);
       border: 1px solid #e2e8f0;
-      background: #ffffff;          /* ← ADD THIS — stops black bleed-through */
-      min-height: 200px;            /* ← ADD THIS — shows white even if PDF fails */
+      line-height: 0;       /* removes inline gap below iframe */
     }
     .poster-wrapper iframe {
       display: block;
       width: 100%;
       height: 850px;
       border: none;
-      background: #ffffff;          /* ← ADD THIS */
+      background: #ffffff;
     }
     @media screen and (max-width: 768px) {
       .poster-wrapper iframe { height: 500px; }
     }
+
   </style>
 
   <script type="application/ld+json">
@@ -515,19 +527,19 @@
       </div>
     </section>
 
-<!-- POSTER -->
-<section class="section" style="background:#ffffff; padding-top: 2rem; padding-bottom: 2rem;">
-  <div class="container is-max-desktop">
-    <h2 class="title">Poster</h2>
-    <div class="poster-wrapper">
-      <iframe
-        src="static/pdf/poster1.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH"
-        title="CVPR 2026 Poster"
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-</section>
+    <!-- POSTER — white background, no dark bleed -->
+    <section class="section poster-section">
+      <div class="container is-max-desktop">
+        <h2 class="title">Poster</h2>
+        <div class="poster-wrapper">
+          <iframe
+            src="static/pdf/poster1.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH"
+            title="CVPR 2026 Poster"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+    </section>
 
     <!-- BIBTEX -->
     <section class="section" id="BibTeX">
